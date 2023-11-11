@@ -1,1 +1,24 @@
-<p>bug-list works!</p>
+<div class="container mt-4">
+    <h2>Bug List</h2>
+    <a routerLink="/create" class="btn btn-primary mb-3">Create New Bug</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" (click)="sort('title')">Title</th>
+          <th scope="col" (click)="sort('priority')">Priority</th>
+          <th scope="col" (click)="sort('reporter')">Reporter</th>
+          <th scope="col" (click)="sort('created')">Date Created</th>
+          <th scope="col" (click)="sort('status')">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bug of bugs">
+          <td>{{ bug.title }}</td>
+          <td>{{ bug.priority }}</td>
+          <td>{{ bug.reporter }}</td>
+          <td>{{ bug.created | date: 'dd/MM/yyyy - HH:mm:ss' }}</td>
+          <td>{{ bug.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
