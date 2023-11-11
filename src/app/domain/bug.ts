@@ -5,6 +5,6 @@ export interface Bug {
     priority: number;
     reporter: string;
     status: string;
-    created: string;
+    created: Date;
     comments: Comment[];
 }

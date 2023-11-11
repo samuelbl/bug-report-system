@@ -5,41 +5,41 @@
         Please fill in all required fields.
       </div>
       <div class="mb-3">
-        <label for="title" class="form-label">Title</label> 
-        <input type="text" class="form-control required" id="title" formControlName="title">
-        <div *ngIf="title.hasError('required') && title.touched" class="alert alert-danger">Title is required</div>
+        <label for="title" class="form-label">Title<span *ngIf="title.hasError('required')" class="text-danger">*</span></label> 
+        <input type="text" class="form-control" id="title" formControlName="title" >
+        <div *ngIf="title.hasError('required') && (title.touched || submitted) " class="alert alert-danger">Title is required</div>
       </div>
       <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" id="description" formControlName="description"></textarea>
-        <div *ngIf="description.hasError('required') && description.touched" class="alert alert-danger">Description is required</div>
+        <label for="description" class="form-label">Description<span *ngIf="description.hasError('required')" class="text-danger">*</span></label>
+        <textarea class="form-control" id="description" formControlName="description" ></textarea>
+        <div *ngIf="description.hasError('required') && (description.touched  || submitted)" class="alert alert-danger">Description is required</div>
       </div>
       <div class="mb-3">
-        <label for="priority" class="form-label">Priority</label>
+        <label for="priority" class="form-label">Priority<span *ngIf="priority.hasError('required')" class="text-danger">*</span></label>
         <select class="form-select" id="priority" formControlName="priority">
           <option value="Minor">Minor</option>
           <option value="Major">Major</option>
           <option value="Critical">Critical</option>
         </select>
-        <div *ngIf="priority.hasError('required') && priority.touched" class="alert alert-danger">Priority is required</div>
+        <div *ngIf="priority.hasError('required') && (priority.touched || submitted)" class="alert alert-danger">Priority is required</div>
       </div>
       <div class="mb-3">
-        <label for="reporter" class="form-label">Reporter</label>
+        <label for="reporter" class="form-label">Reporter<span *ngIf="reporter.hasError('required')" class="text-danger">*</span></label>
         <select class="form-select" id="reporter" formControlName="reporter">
           <option value="QA">QA</option>
           <option value="PO">PO</option>
           <option value="DEV">DEV</option>
         </select>
-        <div *ngIf="reporter.hasError('required') && reporter.touched" class="alert alert-danger">Reporter is required</div>
+        <div *ngIf="reporter.hasError('required') && (reporter.touched || submitted)" class="alert alert-danger">Reporter is required</div>
       </div>
       <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
+        <label for="status" class="form-label">Status<span *ngIf="status.hasError('required')" class="text-danger">*</span></label>
         <select class="form-select" id="status" formControlName="status">
           <option value="For Review">For Review</option>
           <option value="Done">Done</option>
           <option value="Rejected">Rejected</option>
         </select>
-        <div *ngIf="status.hasError('required') && status.touched" class="alert alert-danger">Status is required if the reporter is QA</div>
+        <div *ngIf="status.hasError('required') && (status.touched || submitted)" class="alert alert-danger">Status is required if the reporter is QA</div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

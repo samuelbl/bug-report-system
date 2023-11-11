@@ -25,12 +25,8 @@ export class BugListComponent implements OnInit{
   }
 
   sort(field: string){
-    console.log("field = " + field);
-    console.log("sorting field = " + this.sortingField);
     if(this.sortingField === field){
-      console.log("isAscending = " + this.isAscending);
       this.isAscending = !this.isAscending
-      console.log("isAscending after changed = " + this.isAscending);
     }else{
       this.sortingField = field;
       this.isAscending = true;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Bug } from 'src/app/domain/bug';
 import { BugService } from 'src/app/service/bug.service';
 
 @Component({
@@ -44,9 +45,11 @@ export class BugCreateComponent implements OnInit{
   onSubmit() {
     this.submitted = true;
     if (this.bugForm.valid) {
-      this.bugService.createBug(this.bugForm.value).subscribe(() => {
+      let bug: Bug = this.bugForm.value;
+      bug.created = new Date();
+      this.bugService.createBug(bug).subscribe(() => {
         alert('Bug successfully recorded!');
-        this.router.navigate(['/bug-list'])
+        this.router.navigate(['/'])
       });
     }
   }
