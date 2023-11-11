@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BugListComponent } from './bug-list/bug-list.component';
-import { BugCreateComponent } from './bug-create/bug-create.component';
+import { BugListComponent } from './components/bug-list/bug-list.component';
+import { BugCreateComponent } from './components/bug-create/bug-create.component';
 
 const routes: Routes = [
   { path: '', component: BugListComponent },
