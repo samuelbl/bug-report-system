@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { BugListComponent } from './components/bug-list/bug-list.component';
 import { BugCreateComponent } from './components/bug-create/bug-create.component';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from "@angular/common/http";
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
